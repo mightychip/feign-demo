@@ -3,9 +3,14 @@ package ca.purpleowl.examples.boot2.feign.service.alpha.service;
 import ca.purpleowl.examples.boot2.feign.service.alpha.jpa.model.BookEntity;
 import ca.purpleowl.examples.boot2.feign.service.alpha.jpa.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
+/**
+ * This is used to populate the app with sample data when the `sample-data` profile is active.
+ */
 @Service
+@Profile("sample-data")
 public class BookLoaderService {
     private final BookRepository bookRepo;
 

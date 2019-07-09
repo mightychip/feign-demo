@@ -8,7 +8,6 @@ logging:
               service:
                 omega:
                   client: DEBUG
-#    ca.purpleowl.examples.boot2.feign.service.omega.client.ServiceBetaClient: DEBUG
 
 management:
   server:
@@ -28,3 +27,18 @@ spring:
     name: Service Omega
   jersey:
     application-path: api
+
+resilience4j.circuitbreaker:
+  configs:
+    default:
+      registerHealthIndicator: true
+      ringBufferSizeInClosedState: 10
+      ringBufferSizeInHalfOpenState: 3
+      automaticTransitionFromOpenToHalfOpenEnabled: true
+      waitDurationInOpenState: 60s
+      failureRateThreshold: 25
+  instance:
+    serviceAlpha:
+      baseConfig: default
+      ringBufferSizeInClosedState: 4
+

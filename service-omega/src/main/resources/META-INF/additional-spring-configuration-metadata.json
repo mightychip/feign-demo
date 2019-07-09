@@ -1,0 +1,59 @@
+{
+  "properties": [
+    {
+      "name": "service.alpha.url",
+      "type": "java.lang.String",
+      "description": "URL for ServiceAlpha."
+    },
+    {
+      "name": "service.beta.url",
+      "type": "java.lang.String",
+      "description": "URL for ServiceBeta."
+    },
+    {
+      "name": "resilience4j.circuitbreaker.configs.default.registerHealthIndicator",
+      "type": "java.lang.String",
+      "description": "Description for resilience4j.circuitbreaker.configs.default.registerHealthIndicator."
+    },
+    {
+      "name": "resilience4j.circuitbreaker.configs.default.ringBufferSizeInClosedState",
+      "type": "java.lang.String",
+      "description": "Description for resilience4j.circuitbreaker.configs.default.ringBufferSizeInClosedState."
+    },
+    {
+      "name": "resilience4j.circuitbreaker.configs.default.ringBufferSizeInHalfOpenState",
+      "type": "java.lang.String",
+      "description": "Description for resilience4j.circuitbreaker.configs.default.ringBufferSizeInHalfOpenState."
+    },
+    {
+      "name": "resilience4j.circuitbreaker.configs.default.automaticTransitionFromOpenToHalfOpenEnabled",
+      "type": "java.lang.String",
+      "description": "Description for resilience4j.circuitbreaker.configs.default.automaticTransitionFromOpenToHalfOpenEnabled."
+    },
+    {
+      "name": "resilience4j.circuitbreaker.configs.default.waitDurationInOpenState",
+      "type": "java.lang.String",
+      "description": "Description for resilience4j.circuitbreaker.configs.default.waitDurationInOpenState."
+    },
+    {
+      "name": "resilience4j.circuitbreaker.configs.default.failureRateThreshold",
+      "type": "java.lang.String",
+      "description": "Description for resilience4j.circuitbreaker.configs.default.failureRateThreshold."
+    },
+    {
+      "name": "resilience4j.circuitbreaker.configs.default.eventConsumerBufferSize",
+      "type": "java.lang.String",
+      "description": "Description for resilience4j.circuitbreaker.configs.default.eventConsumerBufferSize."
+    },
+    {
+      "name": "resilience4j.circuitbreaker.instance.serviceAlpha.baseConfig",
+      "type": "java.lang.String",
+      "description": "Description for resilience4j.circuitbreaker.instance.serviceAlpha.baseConfig."
+    },
+    {
+      "name": "resilience4j.circuitbreaker.instance.serviceAlpha.ringBufferSizeInClosedState",
+      "type": "java.lang.String",
+      "description": "Description for resilience4j.circuitbreaker.instance.serviceAlpha.ringBufferSizeInClosedState."
+    }
+  ]
+}

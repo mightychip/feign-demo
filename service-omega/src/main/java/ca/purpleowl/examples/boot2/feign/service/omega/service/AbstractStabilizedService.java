@@ -17,9 +17,9 @@ import java.util.function.Supplier;
 
 @Slf4j
 public abstract class AbstractStabilizedService<T> {
-    final CircuitBreaker circuitBreaker;
-    final Bulkhead bulkhead;
-    final Retry retry;
+    private final CircuitBreaker circuitBreaker;
+    private final Bulkhead bulkhead;
+    private final Retry retry;
 
     public AbstractStabilizedService(BulkheadRegistry bulkheadRegistry,
                                      CircuitBreakerRegistry circuitBreakerRegistry,

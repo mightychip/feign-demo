@@ -1,4 +1,4 @@
-package ca.purpleowl.examples.boot2.feign.service.alpha.model;
+package ca.purpleowl.examples.boot2.feign.service.alpha.rest.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

@@ -2,7 +2,7 @@ package ca.purpleowl.examples.boot2.feign.service.beta.service;
 
 import ca.purpleowl.examples.boot2.feign.service.beta.jpa.model.ReviewEntity;
 import ca.purpleowl.examples.boot2.feign.service.beta.jpa.repository.ReviewRepository;
-import ca.purpleowl.examples.boot2.feign.service.beta.model.Review;
+import ca.purpleowl.examples.boot2.feign.service.beta.rest.model.Review;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

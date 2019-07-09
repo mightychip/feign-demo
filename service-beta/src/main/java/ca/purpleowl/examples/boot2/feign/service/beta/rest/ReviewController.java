@@ -1,6 +1,6 @@
 package ca.purpleowl.examples.boot2.feign.service.beta.rest;
 
-import ca.purpleowl.examples.boot2.feign.service.beta.model.Review;
+import ca.purpleowl.examples.boot2.feign.service.beta.rest.model.Review;
 import ca.purpleowl.examples.boot2.feign.service.beta.service.ReviewService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

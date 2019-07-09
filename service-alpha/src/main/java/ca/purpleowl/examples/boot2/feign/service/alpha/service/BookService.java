@@ -2,7 +2,7 @@ package ca.purpleowl.examples.boot2.feign.service.alpha.service;
 
 import ca.purpleowl.examples.boot2.feign.service.alpha.jpa.model.BookEntity;
 import ca.purpleowl.examples.boot2.feign.service.alpha.jpa.repository.BookRepository;
-import ca.purpleowl.examples.boot2.feign.service.alpha.model.Book;
+import ca.purpleowl.examples.boot2.feign.service.alpha.rest.model.Book;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

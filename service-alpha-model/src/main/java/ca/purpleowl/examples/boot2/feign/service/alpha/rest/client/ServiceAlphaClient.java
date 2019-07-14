@@ -1,7 +1,6 @@
-package ca.purpleowl.examples.boot2.feign.service.omega.client;
+package ca.purpleowl.examples.boot2.feign.service.alpha.rest.client;
 
 import ca.purpleowl.examples.boot2.feign.service.alpha.rest.model.Book;
-import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,8 +10,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
-@FeignClient(name = "serviceAlpha",
-             url = "${service.alpha.url}")
 public interface ServiceAlphaClient {
     @GetMapping(path = "/books", produces = "application/json")
     ResponseEntity<List<Book>> getBooksByAuthor(@RequestParam(name = "authorName", required = false) String authorName);

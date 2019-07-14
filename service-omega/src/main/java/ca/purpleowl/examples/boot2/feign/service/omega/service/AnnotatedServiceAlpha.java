@@ -1,13 +1,11 @@
 package ca.purpleowl.examples.boot2.feign.service.omega.service;
 
 import ca.purpleowl.examples.boot2.feign.service.alpha.rest.model.Book;
-import ca.purpleowl.examples.boot2.feign.service.omega.client.ServiceAlphaClient;
+import ca.purpleowl.examples.boot2.feign.service.alpha.rest.client.ServiceAlphaClient;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import lombok.extern.slf4j.Slf4j;
-import net.bytebuddy.implementation.bytecode.Throw;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.HttpServerErrorException;
 
 import java.util.Collections;
 import java.util.List;
@@ -29,7 +27,8 @@ public class AnnotatedServiceAlpha {
     }
 
     public ResponseEntity<List<Book>> getBooksByAuthorFallback(String authorName, Throwable exception) {
-        log.warn(String.format("While calling getBooksByAuthor(%s), experienced error: %s", authorName, exception.getMessage()), exception);
+        log.warn(String.format("While calling getBooksByAuthor(%s), experienced error: %s", authorName, exception.getMessage()));
+
         return ResponseEntity.ok(Collections.emptyList());
     }
 
@@ -39,7 +38,8 @@ public class AnnotatedServiceAlpha {
     }
 
     public ResponseEntity<Book> getBookByIdFallback(Long bookId, Throwable exception) {
-        log.warn(String.format("While calling getBookById(%d), experienced error: %s", bookId, exception.getMessage()), exception);
+        log.warn(String.format("While calling getBookById(%d), experienced error: %s", bookId, exception.getMessage()));
+
         return ResponseEntity.ok(new Book());
     }
 
@@ -49,7 +49,8 @@ public class AnnotatedServiceAlpha {
     }
 
     public ResponseEntity<Book> createBookFallback(Book book, Throwable exception) {
-        log.warn(String.format("While calling createBook({%s}), experienced error: %s", book.toString(), exception.getMessage()), exception);
+        log.warn(String.format("While calling createBook({%s}), experienced error: %s", book.toString(), exception.getMessage()));
+
         return ResponseEntity.ok(new Book());
     }
 }

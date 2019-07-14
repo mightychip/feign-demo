@@ -19,6 +19,9 @@ server:
 service:
   alpha:
     url: http://localhost:8420/api
+    auth:
+      username: example
+      password: elpmaxe
   beta:
     url: http://localhost:8710/api
 

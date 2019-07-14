@@ -2,24 +2,18 @@ package ca.purpleowl.examples.boot2.feign.service.omega.rest.controller;
 
 import ca.purpleowl.examples.boot2.feign.service.alpha.rest.model.Book;
 import ca.purpleowl.examples.boot2.feign.service.beta.rest.model.Review;
-import ca.purpleowl.examples.boot2.feign.service.omega.client.ServiceAlphaClient;
-import ca.purpleowl.examples.boot2.feign.service.omega.client.ServiceBetaClient;
 import ca.purpleowl.examples.boot2.feign.service.omega.rest.model.BookInfo;
 import ca.purpleowl.examples.boot2.feign.service.omega.service.StabilizedServiceAlpha;
 import ca.purpleowl.examples.boot2.feign.service.omega.service.StabilizedServiceBeta;
-import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Collections;
 import java.util.List;
 
-@Log
 @RestController
 @RequestMapping(path = "book-info")
 public class BookInfoController {

@@ -1,7 +1,7 @@
 package ca.purpleowl.examples.boot2.feign.service.omega.service;
 
 import ca.purpleowl.examples.boot2.feign.service.alpha.rest.model.Book;
-import ca.purpleowl.examples.boot2.feign.service.omega.client.ServiceAlphaClient;
+import ca.purpleowl.examples.boot2.feign.service.alpha.rest.client.ServiceAlphaClient;
 import io.github.resilience4j.bulkhead.BulkheadRegistry;
 import io.github.resilience4j.circuitbreaker.CircuitBreakerRegistry;
 import io.github.resilience4j.retry.RetryRegistry;

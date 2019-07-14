@@ -1,8 +1,6 @@
 package ca.purpleowl.examples.boot2.feign.service.omega.rest.controller;
 
 import ca.purpleowl.examples.boot2.feign.service.alpha.rest.model.Book;
-import ca.purpleowl.examples.boot2.feign.service.omega.client.ServiceAlphaClient;
-import ca.purpleowl.examples.boot2.feign.service.omega.service.AnnotatedServiceAlpha;
 import ca.purpleowl.examples.boot2.feign.service.omega.service.StabilizedServiceAlpha;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -20,29 +18,27 @@ import java.util.List;
 @RestController
 @RequestMapping(path = "/book")
 public class BookController {
-    private final AnnotatedServiceAlpha serviceAlpha;
+    private final StabilizedServiceAlpha serviceAlpha;
 
     @Autowired
-    public BookController(AnnotatedServiceAlpha serviceAlpha) {
+    public BookController(StabilizedServiceAlpha serviceAlpha) {
         this.serviceAlpha = serviceAlpha;
     }
 
     @GetMapping(produces = "application/json")
     public ResponseEntity<List<Book>> listBooks(@RequestParam(name = "authorName", required = false) String authorName) {
-        return serviceAlpha.getBooksByAuthor(authorName);
+        return ResponseEntity.ok(serviceAlpha.getBooksByAuthor(authorName));
     }
 
     @GetMapping(path = "/{bookId}", produces = "application/json")
     public ResponseEntity<Book> getById(@PathVariable("bookId") Long bookId) {
-        return serviceAlpha.getBookById(bookId);
-//        Book book = serviceAlpha.getBookById(bookId);
-//        return book.getId() != null ? ResponseEntity.ok(book) : ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        Book book = serviceAlpha.getBookById(bookId);
+        return book.getId() != null ? ResponseEntity.ok(book) : ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
     }
 
     @PostMapping(produces = "application/json", consumes = "application/json")
     public ResponseEntity<Book> createBook(@RequestBody Book book) {
-        return serviceAlpha.createBook(book);
-//        Book response = serviceAlpha.createBook(book);
-//        return response.getId() != null ? ResponseEntity.ok(response) : ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        Book response = serviceAlpha.createBook(book);
+        return response.getId() != null ? ResponseEntity.ok(response) : ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
     }
 }

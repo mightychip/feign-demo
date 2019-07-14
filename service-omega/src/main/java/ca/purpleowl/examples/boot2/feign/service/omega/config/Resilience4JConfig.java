@@ -31,6 +31,7 @@ public class Resilience4JConfig {
                         .build();
 
         registry.addConfiguration("defaultConfig", defaultConfig);
+        registry.addConfiguration("serviceAlpha", defaultConfig);
 
         return registry;
     }

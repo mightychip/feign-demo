@@ -1,7 +1,6 @@
 package ca.purpleowl.examples.boot2.feign.service.omega.rest.controller;
 
 import ca.purpleowl.examples.boot2.feign.service.beta.rest.model.Review;
-import ca.purpleowl.examples.boot2.feign.service.omega.client.ServiceBetaClient;
 import ca.purpleowl.examples.boot2.feign.service.omega.service.StabilizedServiceBeta;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

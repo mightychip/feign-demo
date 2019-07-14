@@ -12,48 +12,48 @@
     },
     {
       "name": "resilience4j.circuitbreaker.configs.default.registerHealthIndicator",
-      "type": "java.lang.String",
-      "description": "Description for resilience4j.circuitbreaker.configs.default.registerHealthIndicator."
+      "type": "java.lang.Boolean",
+      "description": "Boolean property to determine whether (true) or not (false) a healthIndicator should be registered for each Circuit Breaker (requires Micrometer to be configured)."
     },
     {
       "name": "resilience4j.circuitbreaker.configs.default.ringBufferSizeInClosedState",
-      "type": "java.lang.String",
-      "description": "Description for resilience4j.circuitbreaker.configs.default.ringBufferSizeInClosedState."
+      "type": "java.lang.Integer",
+      "description": "Amount of requests stored in the ring buffer for Circuit Breaker's closed state."
     },
     {
       "name": "resilience4j.circuitbreaker.configs.default.ringBufferSizeInHalfOpenState",
-      "type": "java.lang.String",
-      "description": "Description for resilience4j.circuitbreaker.configs.default.ringBufferSizeInHalfOpenState."
+      "type": "java.lang.Integer",
+      "description": "Amount of requests stored in the ring buffer for Circuit Breaker's open state."
     },
     {
       "name": "resilience4j.circuitbreaker.configs.default.automaticTransitionFromOpenToHalfOpenEnabled",
-      "type": "java.lang.String",
-      "description": "Description for resilience4j.circuitbreaker.configs.default.automaticTransitionFromOpenToHalfOpenEnabled."
+      "type": "java.lang.Integer",
+      "description": "Boolean property indicating whether (true) or not (false) Circuit Breakers are to automatically transition to Open state."
     },
     {
       "name": "resilience4j.circuitbreaker.configs.default.waitDurationInOpenState",
       "type": "java.lang.String",
-      "description": "Description for resilience4j.circuitbreaker.configs.default.waitDurationInOpenState."
+      "description": "A time-formatted string indicating the amount of time a Circuit Breaker should stay in open state.  Only obeyed if Circuit Breakers automatically transition to open state."
     },
     {
       "name": "resilience4j.circuitbreaker.configs.default.failureRateThreshold",
-      "type": "java.lang.String",
-      "description": "Description for resilience4j.circuitbreaker.configs.default.failureRateThreshold."
+      "type": "java.lang.Integer",
+      "description": "An integer representation of the percentage of failures which must occur to trigger Circuit Breaker open state."
     },
     {
       "name": "resilience4j.circuitbreaker.configs.default.eventConsumerBufferSize",
-      "type": "java.lang.String",
-      "description": "Description for resilience4j.circuitbreaker.configs.default.eventConsumerBufferSize."
+      "type": "java.lang.Integer",
+      "description": "That's a good question... I'm really not sure what this value does or what it's doing described here."
     },
     {
       "name": "resilience4j.circuitbreaker.instance.serviceAlpha.baseConfig",
       "type": "java.lang.String",
-      "description": "Description for resilience4j.circuitbreaker.instance.serviceAlpha.baseConfig."
+      "description": "Name of the configuration to copy for this client's configuration."
     },
     {
       "name": "resilience4j.circuitbreaker.instance.serviceAlpha.ringBufferSizeInClosedState",
-      "type": "java.lang.String",
-      "description": "Description for resilience4j.circuitbreaker.instance.serviceAlpha.ringBufferSizeInClosedState."
+      "type": "java.lang.Integer",
+      "description": "Amount of requests to track for Circuit Breaker mechanics on ServiceAlphaClient."
     }
   ]
 }

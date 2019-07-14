@@ -2,7 +2,6 @@ package ca.purpleowl.examples.boot2.feign.service.omega.config;
 
 import ca.purpleowl.examples.boot2.feign.service.omega.client.properties.ServiceAlphaConfigProperties;
 import feign.RequestInterceptor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

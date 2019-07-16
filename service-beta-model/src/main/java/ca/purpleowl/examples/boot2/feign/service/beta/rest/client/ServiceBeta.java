@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.List;
 
 @RequestMapping(path = "/reviews")
-public interface ServiceBetaClient {
+public interface ServiceBeta {
     @GetMapping(produces = "application/json")
     ResponseEntity<List<Review>> getReviewsByBookId(@RequestParam("bookId") Long bookId);
 

@@ -1,6 +1,6 @@
 package ca.purpleowl.examples.boot2.feign.service.omega.service;
 
-import ca.purpleowl.examples.boot2.feign.service.alpha.rest.client.ServiceAlphaClient;
+import ca.purpleowl.examples.boot2.feign.service.alpha.rest.client.ServiceAlpha;
 import ca.purpleowl.examples.boot2.feign.service.alpha.rest.model.Book;
 import io.github.resilience4j.bulkhead.BulkheadRegistry;
 import io.github.resilience4j.circuitbreaker.CircuitBreakerRegistry;
@@ -20,20 +20,20 @@ public class StabilizedServiceAlpha extends AbstractStabilizedService<Book> {
     private static final String CIRCUIT_BREAKER_NAME = "serviceAlpha-circuitBreaker";
     private static final String RETRY_NAME = "serviceAlpha-retry";
 
-    private final ServiceAlphaClient serviceAlphaClient;
+    private final ServiceAlpha serviceAlpha;
 
     public StabilizedServiceAlpha(BulkheadRegistry bulkheadRegistry,
                                   CircuitBreakerRegistry circuitBreakerRegistry,
                                   RetryRegistry retryRegistry,
-                                  ServiceAlphaClient serviceAlphaClient) {
+                                  ServiceAlpha serviceAlpha) {
         super(bulkheadRegistry, circuitBreakerRegistry, retryRegistry);
-        this.serviceAlphaClient = serviceAlphaClient;
+        this.serviceAlpha = serviceAlpha;
     }
 
 
     public List<Book> getBooksByAuthor(String authorName) {
         try {
-            ResponseEntity<List<Book>> response = wrapAssetListResponse(() -> serviceAlphaClient.getBooksByAuthor(authorName));
+            ResponseEntity<List<Book>> response = wrapAssetListResponse(() -> serviceAlpha.getBooksByAuthor(authorName));
 
             if(HttpStatus.OK.equals(response.getStatusCode())) {
                 return response.getBody();
@@ -49,7 +49,7 @@ public class StabilizedServiceAlpha extends AbstractStabilizedService<Book> {
 
     public Book getBookById(Long bookId) {
         try {
-            ResponseEntity<Book> response = wrapSingleAssetResopnse(() -> serviceAlphaClient.getBookById(bookId));
+            ResponseEntity<Book> response = wrapSingleAssetResopnse(() -> serviceAlpha.getBookById(bookId));
 
             if(HttpStatus.OK.equals(response.getStatusCode())) {
                 return response.getBody();
@@ -65,7 +65,7 @@ public class StabilizedServiceAlpha extends AbstractStabilizedService<Book> {
 
     public Book createBook(Book book) {
         try {
-            ResponseEntity<Book> response = wrapSingleAssetResopnse(() -> serviceAlphaClient.createBook(book));
+            ResponseEntity<Book> response = wrapSingleAssetResopnse(() -> serviceAlpha.createBook(book));
 
             if(HttpStatus.OK.equals(response.getStatusCode())) {
                 return response.getBody();

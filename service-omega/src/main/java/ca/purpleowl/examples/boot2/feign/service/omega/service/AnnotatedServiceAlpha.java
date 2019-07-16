@@ -1,6 +1,6 @@
 package ca.purpleowl.examples.boot2.feign.service.omega.service;
 
-import ca.purpleowl.examples.boot2.feign.service.alpha.rest.client.ServiceAlphaClient;
+import ca.purpleowl.examples.boot2.feign.service.alpha.rest.client.ServiceAlpha;
 import ca.purpleowl.examples.boot2.feign.service.alpha.rest.model.Book;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import lombok.extern.slf4j.Slf4j;
@@ -15,9 +15,9 @@ import java.util.List;
 public class AnnotatedServiceAlpha {
     private static final String CIRCUIT_BREAKER_NAME = "serviceAlpha";
 
-    private final ServiceAlphaClient serviceAlpha;
+    private final ServiceAlpha serviceAlpha;
 
-    public AnnotatedServiceAlpha(ServiceAlphaClient serviceAlpha) {
+    public AnnotatedServiceAlpha(ServiceAlpha serviceAlpha) {
         this.serviceAlpha = serviceAlpha;
     }
 

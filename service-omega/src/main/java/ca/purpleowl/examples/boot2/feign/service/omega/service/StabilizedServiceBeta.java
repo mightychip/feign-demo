@@ -1,6 +1,6 @@
 package ca.purpleowl.examples.boot2.feign.service.omega.service;
 
-import ca.purpleowl.examples.boot2.feign.service.beta.rest.client.ServiceBetaClient;
+import ca.purpleowl.examples.boot2.feign.service.beta.rest.client.ServiceBeta;
 import ca.purpleowl.examples.boot2.feign.service.beta.rest.model.Review;
 import io.github.resilience4j.bulkhead.BulkheadRegistry;
 import io.github.resilience4j.circuitbreaker.CircuitBreakerRegistry;
@@ -20,12 +20,12 @@ public class StabilizedServiceBeta extends AbstractStabilizedService<Review> {
     private static final String CIRCUIT_BREAKER_NAME = "serviceAlpha-circuitBreaker";
     private static final String RETRY_NAME = "serviceAlpha-retry";
 
-    private final ServiceBetaClient serviceBetaClient;
+    private final ServiceBeta serviceBetaClient;
 
     public StabilizedServiceBeta(BulkheadRegistry bulkheadRegistry,
                                  CircuitBreakerRegistry circuitBreakerRegistry,
                                  RetryRegistry retryRegistry,
-                                 ServiceBetaClient serviceBetaClient) {
+                                 ServiceBeta serviceBetaClient) {
         super(bulkheadRegistry, circuitBreakerRegistry, retryRegistry);
         this.serviceBetaClient = serviceBetaClient;
     }

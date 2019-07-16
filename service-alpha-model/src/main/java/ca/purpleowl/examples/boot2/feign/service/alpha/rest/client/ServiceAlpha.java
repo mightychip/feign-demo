@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
-public interface ServiceAlphaClient {
+public interface ServiceAlpha {
     @GetMapping(path = "/books", produces = "application/json")
     ResponseEntity<List<Book>> getBooksByAuthor(@RequestParam(name = "authorName", required = false) String authorName);
 

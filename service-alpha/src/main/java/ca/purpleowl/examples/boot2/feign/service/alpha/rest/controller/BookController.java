@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+/**
+ * Here, we implement the {@link ServiceAlpha} interface to provide a full ReST Controller.
+ */
 @RestController
 public class BookController implements ServiceAlpha {
     private final BookService bookService;

@@ -20,6 +20,9 @@
     <modules>
         <module>service-alpha-model</module>
         <module>service-beta-model</module>
+        <module>service-alpha</module>
+        <module>service-beta</module>
+        <module>service-omega</module>
     </modules>
 
     <dependencies>

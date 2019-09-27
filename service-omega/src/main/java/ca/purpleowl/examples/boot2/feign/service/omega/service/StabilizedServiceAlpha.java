@@ -13,6 +13,10 @@ import org.springframework.stereotype.Service;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * This is an implementation of Resilience4J in top of a Feign client to provide various flavours of fault tolerance,
+ * including Bulkheads, Circuit Breakers, and Retries.
+ */
 @Service
 @Slf4j
 public class StabilizedServiceAlpha extends AbstractStabilizedService<Book> {

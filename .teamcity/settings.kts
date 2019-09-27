@@ -1,8 +1,11 @@
-import jetbrains.buildServer.configs.kotlin.v2018_2.*
+import jetbrains.buildServer.configs.kotlin.v2018_2.BuildType
+import jetbrains.buildServer.configs.kotlin.v2018_2.DslContext
 import jetbrains.buildServer.configs.kotlin.v2018_2.buildSteps.MavenBuildStep
 import jetbrains.buildServer.configs.kotlin.v2018_2.buildSteps.maven
+import jetbrains.buildServer.configs.kotlin.v2018_2.project
 import jetbrains.buildServer.configs.kotlin.v2018_2.triggers.finishBuildTrigger
 import jetbrains.buildServer.configs.kotlin.v2018_2.triggers.vcs
+import jetbrains.buildServer.configs.kotlin.v2018_2.version
 
 /*
 The settings script is an entry point for defining a TeamCity
@@ -29,7 +32,7 @@ To debug in IntelliJ Idea, open the 'Maven Projects' tool window (View
 version = "2019.1"
 
 project {
-
+    //For some reason this script does not set VCS root here... according to the demo, that seems like the normal thing to do...?
     buildType(ServiceOmega)
     buildType(ServiceBeta)
     buildType(ServiceAlpha)
@@ -67,6 +70,8 @@ object ServiceAlpha : BuildType({
     triggers {
         vcs {
         }
+        //This is poorly named.  This means it will wait for a build to finish in the specified project (SharedModel)
+        //before actually running.
         finishBuildTrigger {
             buildType = "${SharedModel.id}"
         }

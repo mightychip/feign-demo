@@ -9,13 +9,15 @@ import jetbrains.buildServer.configs.kotlin.v2018_2.version
 
 /*
 The settings script is an entry point for defining a TeamCity
-project hierarchy. The script should contain a single call to the
-project() function with a Project instance or an init function as
-an argument.
+project hierarchy. When built from a Maven project, everything
+gets dumped into the settings.kt file.  It's pretty ugly and
+essentially requires some immediate cleanup.
 
 VcsRoots, BuildTypes, Templates, and subprojects can be
 registered inside the project using the vcsRoot(), buildType(),
-template(), and subProject() methods respectively.
+template(), and subProject() methods respectively.  In a perfect
+world, these would all link to external classes.  I'm going to have
+to do some cleanup to rectify this.
 
 To debug settings scripts in command-line, run the
 
